@@ -17,10 +17,21 @@ const ChannelDetail = () => {
     .then((data) => setchannelDetail(data?.items[0]));
 
     fetchFromAPI(`search?channelId=${id}&part=snippet&order=date`)
-    .then((data) => setvideos(data?.items));
+    .then((data) => setvideos(data?.items)); 
+
   },[id])
   return (
-    <div>ChannelDetail</div>
+    <Box minHeight="95vh">
+      <Box>
+        <div style={{
+          background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
+          zIndex:10, height: '300px'
+        }}
+        />
+        <ChannelCard  channelDetail={channelDetail} marginTop='-93px'/>
+         
+      </Box>
+    </Box>
   )
 }
 
